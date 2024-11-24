@@ -11,7 +11,7 @@ class Contact {
 	public:
 		enum Field {PHONE_NUMBER, FIRST_NAME, LAST_NAME, NICKNAME, DARKEST_SECRET, INDEX};
 		
-		Contact(int	index) : data(6) {
+		Contact() : data(5) {
 			std::cout << "Please enter the Phone number of entry: ";
 			std::cin >> data[PHONE_NUMBER];
 			std::cout << "First name: ";
@@ -23,50 +23,35 @@ class Contact {
 			std::cout << "Deepest darkest secret: ";
 			std::cin >> data[DARKEST_SECRET];
 			std::cout << "\n";
+		}
 
-			std::string index_str = std::to_string(index);
-			data[INDEX] = index_str;
+		void setIndex(int index) {
+			if (index < 0 || index > 5)
+				return ;
+			std::string	index_string = std::to_string(index + 1);
+			data[index] = index_string;
 		}
 
 		int	displayContactRow(int index) {
-			int	buffer;
+			int	buffer = data[index].length();
 
-			buffer = data[INDEX].length();
-
-			if (buffer > 10)
-				buffer = 10;
-
-			for (int i = 0 ; i < buffer; i++)
-				std::cout << " ";
-			std::cout << data[INDEX];
+			std::cout << buffer << "Buffer size";
+			for (int j = 0; j < 5; j++)
+			{
+				std::cout << data[j];
+			}
 
 			return (0);
 		}
 };
 
 class PhoneBook {
-	public:
+	private:
 		std::vector<Contact>	contacts;
+	public:
 
-		int	addContact(const Contact& contact) {
-			if (contacts.size() < 8) {
-				contacts.push_back(contact);
-			}
-			else {
-				contacts.erase(contacts.begin());
-			}
-			return (1);
-		}
-		int	searchContact() {
-			std::cout << "     Index|First name| Last name| Nickname\n";
-			// Passing down contacts row by row
-			for (int i = 1; i < (int)contacts.size(); i++)
-			{
-				contacts[i - 1].displayContactRow(i);
-			}
-			std::cout << "\n";
-			return (1);
-		}
+		int	addContact(const Contact& contact);
+		int	searchContact();
 };
 
 #endif

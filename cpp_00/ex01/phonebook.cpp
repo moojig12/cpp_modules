@@ -1,37 +1,28 @@
 #include "phonebook.hpp"
 
-std::string	convert_toupper(std::string& string)
+int	addContact(const Contact& contact, std::vector<Contact> vector)
 {
-	for (char& c : string)
-		c = std::toupper(c);
-	return (string);
+	if (vector.size() < 8) {
+		int	index = vector.size();
+		std::cout << index;
+
+		vector[index].setIndex(index);
+		vector.push_back(contact);
+	}
+	else {
+		vector.erase(vector.begin());
+	}
+	return (1);
 }
 
-int	main(void)
+int	searchContact(std::vector<Contact> contacts)
 {
-	PhoneBook phonebook;
-	std::string	input;
-
-	// Take input
-	while (1)
+	std::cout << "     Index|First name| Last name| Nickname\n";
+	// Passing down contacts row by row
+	for (int i = 0; i < (int)contacts.size(); i++)
 	{
-		std::cout << "Select operation: ADD, SEARCH, EXIT\nInput: ";
-		std::cin >> input;
-		convert_toupper(input);
-		if (input == "ADD")
-		{
-			Contact newContact;
-			// Prompt user to give additional info
-			if (phonebook.addContact(newContact))
-				std::cout << "New entry!\n";
-		}
-		else if (input == "SEARCH")
-		{
-			phonebook.searchContact();
-		}
-		else if (input == "EXIT")
-			break ;
-		else
-			std::cout << "Invalid operation\n";
+		contacts[i].displayContactRow(i);
 	}
+	std::cout << "\n";
+	return (1);
 }
