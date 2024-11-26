@@ -1,18 +1,18 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int	PhoneBook::addContact(const Contact& contact)
 {
-	if (size > 8)
-	{
-		contacts[0] = contact;
-		size = 1;
-	}
-	contacts[size] = contact;
+	if (size_buffer >= 8)
+		size_buffer = 0;
+	contacts[size_buffer] = contact;
+
 	size++;
+	size_buffer++;
+	std::cout << size;
 	return (1);
 }
 
-int	PhoneBook::displayContactRow(const Contact contact, int index) {
+int	PhoneBook::displayContactRow(const Contact& contact, int index) {
 	std::string	data;
 	int	buff;
 	int	i;
@@ -55,7 +55,7 @@ int	PhoneBook::searchContact()
 	std::cout << "     Index|First name| Last name| Nickname |\n";
 	// Passing down contacts row by row
 	int	i = 0;
-	while (i < size) {
+	while (i < size && i < 8) {
 		displayContactRow(contacts[i], i);
 		i++;
 	}
