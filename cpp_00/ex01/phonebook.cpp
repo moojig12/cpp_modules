@@ -60,7 +60,7 @@ int	PhoneBook::searchContact()
 		i++;
 	}
 	std::cout << "\n";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	input_int = atoi(input.c_str());
 
 	if (input_int > size)
