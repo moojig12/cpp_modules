@@ -1,56 +1,53 @@
+#pragma once
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
 #include <iostream>
+#include <cstdlib>
 #include <string>
 #include <vector>
 
+std::string	ft_itoa(int nbr);
+
 class Contact {
 	private:
-		std::vector<std::string>	data;
+		std::string	data[5];
 	public:
-		enum Field {PHONE_NUMBER, FIRST_NAME, LAST_NAME, NICKNAME, DARKEST_SECRET, INDEX};
-		
-		Contact() : data(5) {
+		enum Field {PHONE_NUMBER, FIRST_NAME, LAST_NAME, NICKNAME, DARKEST_SECRET};
+
+		int	popFields() {
 			std::cout << "Please enter the Phone number of entry: ";
-			std::cin >> data[PHONE_NUMBER];
+			std::getline(std::cin, data[PHONE_NUMBER]);
 			std::cout << "First name: ";
-			std::cin >> data[FIRST_NAME];
+			std::getline(std::cin, data[FIRST_NAME]);
 			std::cout << "Last name: ";
-			std::cin >> data[LAST_NAME];
+			std::getline(std::cin, data[LAST_NAME]);
 			std::cout << "Nickname: ";
-			std::cin >> data[NICKNAME];
+			std::getline(std::cin, data[NICKNAME]);
 			std::cout << "Deepest darkest secret: ";
-			std::cin >> data[DARKEST_SECRET];
+			std::getline(std::cin, data[DARKEST_SECRET]);
 			std::cout << "\n";
+
+			return (1);
 		}
-
-		void setIndex(int index) {
-			if (index < 0 || index > 5)
-				return ;
-			std::string	index_string = std::to_string(index + 1);
-			data[index] = index_string;
-		}
-
-		int	displayContactRow(int index) {
-			int	buffer = data[index].length();
-
-			std::cout << buffer << "Buffer size";
-			for (int j = 0; j < 5; j++)
-			{
-				std::cout << data[j];
-			}
-
+		int	displayContact() {
+			for (int i = 0; i < 5; i++)
+				std::cout << data[i] << "\n";
 			return (0);
+		}
+		std::string getData(int index) const {
+			return (data[index]);
 		}
 };
 
 class PhoneBook {
 	private:
-		std::vector<Contact>	contacts;
+		Contact	contacts[8];
+		int	size;
 	public:
-
+		PhoneBook() : size(0) {}
 		int	addContact(const Contact& contact);
+		int	displayContactRow(const Contact contact, int index);
 		int	searchContact();
 };
 

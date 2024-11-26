@@ -1,13 +1,12 @@
 #include "phonebook.hpp"
 
-std::string	convert_toupper(std::string& string)
+/* std::string	convert_toupper(std::string& string)
 {
 	for (char& c : string)
 		c = std::toupper(c);
 	return (string);
 }
-
-
+ */
 int	main(void)
 {
 	PhoneBook phonebook;
@@ -17,12 +16,13 @@ int	main(void)
 	while (1)
 	{
 		std::cout << "Select operation: ADD, SEARCH, EXIT\nInput: ";
-		std::cin >> input;
-		convert_toupper(input);
+		std::getline(std::cin, input);
+		// convert_toupper(input);
 		if (input == "ADD")
 		{
 			Contact newContact;
 			// Prompt user to give additional info
+			newContact.popFields();
 			if (phonebook.addContact(newContact))
 				std::cout << "New entry!\n";
 		}
@@ -33,6 +33,9 @@ int	main(void)
 		else if (input == "EXIT")
 			break ;
 		else
+		{
+			input.erase();
 			std::cout << "Invalid operation\n";
+		}
 	}
 }

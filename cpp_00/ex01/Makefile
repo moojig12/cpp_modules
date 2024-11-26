@@ -1,14 +1,15 @@
 NAME	= phonebook
 
 SRC		=	main.cpp \
+			itoa.cpp \
 			phonebook.cpp
 
 
 OBJ		= $(SRC:.cpp=.o)
 
 RM		= rm -f
-CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
+CC		= g++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
@@ -16,7 +17,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -O0 $(OBJ) -o $(NAME)
 
 %.o:%.cpp
-	$(CC) $(CFLAGS) -O0 -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)
