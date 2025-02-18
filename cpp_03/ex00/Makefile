@@ -5,27 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nmandakh <nmandakh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/14 12:27:08 by nmandakh          #+#    #+#              #
-#    Updated: 2025/02/18 14:47:40 by nmandakh         ###   ########.fr        #
+#    Created: 2025/02/18 14:46:22 by nmandakh          #+#    #+#              #
+#    Updated: 2025/02/18 14:49:41 by nmandakh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= fixed
+NAME = clapclap
 
-SRC		=	main.cpp \
-			Fixed.cpp
+SRCS = main.cpp \
+		ClapTrap.cpp
 
+CC = c++
+CLAGS = -Wall -Wextra -Werror --std=98
 
-OBJ		= $(SRC:.cpp=.o)
-
-RM		= rm -f
-CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
+OBJS=(.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -O0 $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 %.o:%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
