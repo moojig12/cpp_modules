@@ -1,8 +1,7 @@
-NAME	= zomboid
+NAME	= harl
 
 SRC		=	main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp
+			Harl.cpp
 
 
 OBJ		= $(SRC:.cpp=.o)

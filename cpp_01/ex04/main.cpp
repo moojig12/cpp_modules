@@ -65,6 +65,7 @@ int	replace_occ(std::string filename, std::string base, std::string replacement)
 	output_file.close();
 	return (0);
 }
+
 // Replace every occurence of s1 with s2 in the file
 int	main(int argc, char **argv)
 {
