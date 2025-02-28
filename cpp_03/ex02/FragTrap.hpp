@@ -7,7 +7,7 @@
 
 class FragTrap : public ClapTrap {
 public:
-    void    highFiveGuys(void);
-}
+	void	highFiveGuys(void);
+};
 
 #endif

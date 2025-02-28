@@ -6,24 +6,27 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/18 14:46:22 by nmandakh          #+#    #+#              #
-#    Updated: 2025/02/23 16:25:17 by root             ###   ########.fr        #
+#    Updated: 2025/02/27 21:53:06 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = tarkov
 
 SRCS = main.cpp \
-		ClapTrap.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp
 
-CC = c++
-CLAGS = -Wall -Wextra -Werror --std=98
+OBJ		= $(SRC:.cpp=.o)
 
-OBJS=(.cpp=.o)
+RM		= rm -f
+CC		= c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -O0 $(OBJ) -o $(NAME)
 
 %.o:%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@

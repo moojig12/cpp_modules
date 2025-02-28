@@ -3,27 +3,29 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nmandakh <nmandakh@student.42.fr>          +#+  +:+       +#+         #
+#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/18 14:46:22 by nmandakh          #+#    #+#              #
-#    Updated: 2025/02/18 14:49:41 by nmandakh         ###   ########.fr        #
+#    Updated: 2025/02/27 21:52:22 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = clapclap
+NAME	= clapclap
 
-SRCS = main.cpp \
-		ClapTrap.cpp
+SRC		=	main.cpp \
+			ClapTrap.cpp
 
-CC = c++
-CLAGS = -Wall -Wextra -Werror --std=98
 
-OBJS=(.cpp=.o)
+OBJ		= $(SRC:.cpp=.o)
+
+RM		= rm -f
+CC		= c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -O0 $(OBJ) -o $(NAME)
 
 %.o:%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@

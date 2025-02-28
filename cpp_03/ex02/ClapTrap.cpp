@@ -16,8 +16,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &b) {
 		_energy = b._energy;
 		_hp = b._hp;
 	}
-	else
-		return (*this);
+	return (*this);
 }
 
 ClapTrap::~ClapTrap() { std::cout << _name << " self destructed!\n";}
