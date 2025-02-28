@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap(void) : _name("Unnamed"), _hp(10), _dmg(0), _energy(10) { std::cout << "You forgot to name this poor fella!\n(default constructor)\n";} 
+ClapTrap::ClapTrap(void) : _name("Unnamed ClapTrap"), _hp(10), _dmg(0), _energy(10) { std::cout << "You forgot to name this poor fella!\n(default constructor)\n";} 
 
 ClapTrap::ClapTrap(const std::string name) : _name(name), _hp(10), _dmg(0), _energy(10) { std::cout << name << " has been born!\n(name string constructor)\n";}
 
@@ -41,8 +41,16 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hp > 0)
 	{
-		_hp--;
-		std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage!\n";
+		if (_hp > amount)
+		{
+			_hp -= amount;
+			std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage!\n";
+		}
+		else
+		{
+			_hp = 0;
+			std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage and explodes!\n";
+		}
 	}
 	else
 		std::cout << "ClapTrap " << _name << " is dead and cannot take anymore damage!\n";
@@ -51,19 +59,20 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_hp > 0)
 	{
-		if (_energy - amount > 0)
+		if (_energy >= amount)
 		{
 			_energy -= amount;
 			_hp += amount;
 			std::cout << "ClapTrap " << _name << " repairs self!\n";
 		}
 		else
-			std::cout << "ClapTrap " << _name << "doesn't have enough energy to repair for " << amount << "\n";
+			std::cout << "ClapTrap " << _name << " doesn't have enough energy to repair for " << amount << " hp!\n";
 	}
 	else
 		std::cout << "ClapTrap " << _name << " is dead and cannot repair self!\n";
 }
 
 void	ClapTrap::printStats(void) {
-	std::cout << _name << "\n" << "Health: " << _hp << "\nEnergy: " << _energy << "\n";
+	std::cout << "\e[1;38:5:58m" << _name \
+	<< "\e[0m\n" << "\e[1;38:5:34m	Health: " << _hp << "\e[0m\n\e[1;38:5:184m	Energy: " << _energy << "\e[0m\n";
 }

@@ -9,11 +9,11 @@ class ClapTrap
 {
 private:
 	std::string	_name;
-	int	_hp;
-	int	_dmg;
-	int	_energy;
+	unsigned int	_hp;
+	unsigned int	_dmg;
+	unsigned int	_energy;
 public:
-	ClapTrap();
+	ClapTrap(void);
 	ClapTrap(const std::string name);
 	ClapTrap(const ClapTrap &other);
 	ClapTrap&	operator=(const ClapTrap &other);
@@ -23,6 +23,7 @@ public:
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 
+	void	printStats(void);
 };
 
 #endif

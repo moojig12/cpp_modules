@@ -7,9 +7,10 @@
 
 class ScavTrap : public ClapTrap {
 private:
-    bool    _guardStatus;
+	bool	_guardStatus;
 public:
-    void    guardGate();
-}
+	ScavTrap(void);
+	void	guardGate();
+};
 
 #endif
