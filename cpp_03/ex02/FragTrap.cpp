@@ -30,11 +30,6 @@ FragTrap	&FragTrap::operator=(const FragTrap &b) {
 	return *this;
 }
 
-void	FragTrap::attack(std::string const &target) {
-	std::cout << "FragTrap variant ";
-	ClapTrap::attack(target);
-}
-
 FragTrap::~FragTrap() {
 	std::cout << "FragTrap " << _name << " has been destroyed!\n(FragTrap destructor)\n";
 }
