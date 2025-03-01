@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap(void) : _name("Unnamed"), _hp(10), _dmg(0), _energy(10) { std::cout << "You forgot to name this poor fella!\n(default constructor)\n";} 
+ClapTrap::ClapTrap(void) : _name("Unnamed ClapTrap"), _hp(10), _dmg(0), _energy(10) { std::cout << "ClapTrap Constructor!\n(default constructor)\n";} 
 
 ClapTrap::ClapTrap(const std::string name) : _name(name), _hp(10), _dmg(0), _energy(10) { std::cout << name << " has been born!\n(name string constructor)\n";}
 

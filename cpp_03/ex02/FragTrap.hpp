@@ -6,8 +6,16 @@
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap {
-public:
-	void	highFiveGuys(void);
-};
-
+	public:
+		FragTrap(void);
+		FragTrap(const std::string name);
+		FragTrap(const FragTrap &b);
+		FragTrap	&operator=(const FragTrap &b);
+		~FragTrap(void);
+	
+		void	attack(std::string const &target);
+		void	highFiveGuys(void);
+	};
+	
+	#endif
 #endif
