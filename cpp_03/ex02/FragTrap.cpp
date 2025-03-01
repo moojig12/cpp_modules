@@ -31,18 +31,8 @@ FragTrap	&FragTrap::operator=(const FragTrap &b) {
 }
 
 void	FragTrap::attack(std::string const &target) {
-	if (_hp > 0)
-	{
-		if (_energy > 0)
-		{
-			_energy--;
-			std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _dmg << " points of damage!\n";
-		}
-		else
-			std::cout << "FragTrap " << _name << " doesn't have enough energy to attack!\n";
-	}
-	else
-		std::cout << "FragTrap " << _name << " is dead and cannot attack!\n";
+	std::cout << "FragTrap variant ";
+	ClapTrap::attack(target);
 }
 
 FragTrap::~FragTrap() {
@@ -50,5 +40,8 @@ FragTrap::~FragTrap() {
 }
 
 void	FragTrap::highFiveGuys(void) {
-	std::cout << "FragTrap " << _name << " requests a High five!\n";
+	if (_hp > 0)
+		std::cout << "FragTrap " << _name << " requests a High five!\n";
+	else
+		std::cout << "FragTrap " << _name << " is dead and cannot request a High five!\n";
 }

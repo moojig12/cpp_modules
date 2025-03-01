@@ -13,11 +13,11 @@ ScavTrap::ScavTrap(const std::string name) {
 	_hp = 100;
 	_energy = 50;
 	_dmg = 20;
-	std::cout << "name constructor called for " << _name << "\n(child name constructor)\n";
+	std::cout << "name constructor called for ScavTrap" << _name << "\n(child name constructor)\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap &b) : ClapTrap::ClapTrap(b), _guardStatus(b._guardStatus) {
-	std::cout << "copy constructor called for " << _name << "\n(child copy constructor)\n";
+	std::cout << "copy constructor called for ScavTrap" << _name << "\n(child copy constructor)\n";
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &b) {
@@ -32,19 +32,14 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &b) {
 }
 
 void	ScavTrap::attack(std::string const &target) {
-	if (_hp > 0)
-	{
-		if (_energy > 0)
-		{
-			_energy--;
-			std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _dmg << " points of damage!\n";
-		}
-		else
-			std::cout << "ScavTrap " << _name << " doesn't have enough energy to attack!\n";
-	}
-	else
-		std::cout << "ScavTrap " << _name << " is dead and cannot attack!\n";
+	std::cout << "ScavTrap variant ";
+	ClapTrap::attack(target);
 }
+
+/* void	ScavTrap::takeDamage(unsigned int amount) {
+	std::cout << "ScavTrap variant ";
+	ClapTrap::takeDamage(amount);
+} */
 
 void	ScavTrap::guardGate(void) {
 	if (_hp > 0)

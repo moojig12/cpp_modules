@@ -6,18 +6,18 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/18 14:46:22 by nmandakh          #+#    #+#              #
-#    Updated: 2025/02/27 21:53:06 by root             ###   ########.fr        #
+#    Updated: 2025/03/01 12:02:27 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = tarkov
+NAME = traptraptrap
 
 SRCS = main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
 		FragTrap.cpp
 
-OBJ		= $(SRC:.cpp=.o)
+OBJ		= $(SRCS:.cpp=.o)
 
 RM		= rm -f
 CC		= c++

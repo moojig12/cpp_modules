@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:51:30 by nmandakh          #+#    #+#             */
-/*   Updated: 2025/03/01 11:36:59 by root             ###   ########.fr       */
+/*   Updated: 2025/03/01 12:01:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ int	main()
 	Dmitri.attack("Black Queen");
 	Dmitri.guardGate();
 
+	std::cout << "\n\e[1;38:5:9m" << "Tests for ScavTraps has ended!" << "\e[0m\n";
 	std::cout << "\e[1;38:5:14mCleaning up!\e[0m\n\n";
 }
