@@ -1,6 +1,6 @@
 #pragma once
 
-#ifndef	ANIMAL>HPP
+#ifndef	ANIMAL_HPP
 # define ANIMAL_HPP
 
 #include <iostream>
@@ -12,7 +12,10 @@ public:
 	Animal();
 	Animal(const std::string &type);
 	Animal	&operator=(const Animal &b);
-	~Animal();
+	virtual	~Animal();
+
+	std::string	getType();
+	virtual void		makeSound();
 };
 
 #endif

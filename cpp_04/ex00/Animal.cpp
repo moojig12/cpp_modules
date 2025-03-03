@@ -1,10 +1,10 @@
 #include "Animal.hpp"
 
-Animal::Animal() {
+Animal::Animal() : _type("Animal") {
 	std::cout << "Constructor for Animal has been called!\n";
 }
 
-Animal::Animal(const std::string &type) {
+Animal::Animal(const std::string &type) : _type(type) {
 	std::cout << "Copy Constructor for Animal has been called!\n";
 }
 
@@ -20,4 +20,12 @@ Animal	&Animal::operator=(const Animal &b) {
 
 Animal::~Animal() {
 	std::cout << "Destructor for Animal has been called!\n";
+}
+
+void	Animal::makeSound() {
+	std::cout << "*Indiscernible animal noise*\n";
+}
+
+std::string	Animal::getType() {
+	return (_type);
 }
