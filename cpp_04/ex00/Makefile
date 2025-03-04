@@ -6,7 +6,7 @@
 #    By: nmandakh <nmandakh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 12:27:08 by nmandakh          #+#    #+#              #
-#    Updated: 2025/03/04 15:38:33 by nmandakh         ###   ########.fr        #
+#    Updated: 2025/03/04 15:57:52 by nmandakh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,9 @@ NAME	= cats_n_dogs
 SRC		=	main.cpp \
 			Animal.cpp \
 			Cat.cpp \
-			Dog.cpp
-
+			Dog.cpp \
+			WrongCat.cpp \
+			WrongAnimal.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
