@@ -14,18 +14,17 @@ Animal	&Animal::operator=(const Animal &b) {
 		_type = b._type;
 		std::cout << "Copy assignment operator has been called!\n";
 	}
-	else
-		return (*this);
+	return (*this);
 }
 
 Animal::~Animal() {
 	std::cout << "Destructor for Animal has been called!\n";
 }
 
-void	Animal::makeSound() {
+void	Animal::makeSound() const {
 	std::cout << "*Indiscernible animal noise*\n";
 }
 
-std::string	Animal::getType() {
+std::string	Animal::getType() const {
 	return (_type);
 }
