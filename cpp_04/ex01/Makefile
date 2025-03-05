@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nmandakh <nmandakh@student.42.fr>          +#+  +:+       +#+         #
+#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 12:27:08 by nmandakh          #+#    #+#              #
-#    Updated: 2025/03/04 15:57:52 by nmandakh         ###   ########.fr        #
+#    Updated: 2025/03/05 22:01:39 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC		=	main.cpp \
 			Cat.cpp \
 			Dog.cpp \
 			WrongCat.cpp \
-			WrongAnimal.cpp
+			WrongAnimal.cpp \
+			Brain.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 

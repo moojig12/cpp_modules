@@ -5,7 +5,7 @@ Dog::Dog() {
 	std::cout << "Dog has been constructed (default)!\n";
 }
 
-Dog::Dog(const Dog &b) {
+Dog::Dog(const Dog &b) : Animal(b) {
 	_type = b._type;
 	std::cout << "Dog has been copied!\n";
 }

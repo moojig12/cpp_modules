@@ -6,7 +6,7 @@ WrongCat::WrongCat() {
 	std::cout << "WrongCat has been constructed (default)!\n";
 }
 
-WrongCat::WrongCat(const WrongCat &b) {
+WrongCat::WrongCat(const WrongCat &b)  : WrongAnimal(b) {
 	_type = b._type;
 	std::cout << "WrongCat has been copied!\n";
 }

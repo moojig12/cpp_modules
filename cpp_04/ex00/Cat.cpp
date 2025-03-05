@@ -5,7 +5,7 @@ Cat::Cat() {
 	std::cout << "Cat has been constructed (default)!\n";
 }
 
-Cat::Cat(const Cat &b) {
+Cat::Cat(const Cat &b) : Animal(b) {
 	_type = b._type;
 	std::cout << "Cat has been copied!\n";
 }
