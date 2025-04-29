@@ -4,49 +4,38 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
-
+#include <stdexcept>
+#include <string>
 class Bureaucrat
 {
 private:
-	const std::string _name;
-	unsigned int	_grade;
+	const std::string	_name;
+	unsigned int		_grade;
 public:
 	Bureaucrat();
-	Bureaucrat(std::string name);
-	Bureaucrat(unsigned int grade);
 	Bureaucrat(std::string name, unsigned int grade);
+	Bureaucrat(const Bureaucrat& other);
+	Bureaucrat& operator=(const Bureaucrat& other);
 	~Bureaucrat();
+
+	class GradeTooHighException : public std::exception {
+	private:
+		unsigned int	_grade;
+	public:
+		GradeTooHighException(unsigned int grade);
+		virtual const char* what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception {
+	private:
+		unsigned int	_grade;
+	public:
+		GradeTooLowException(unsigned int grade);
+		virtual const char* what() const throw();
+	};
 
 	std::string		getName() const;
 	unsigned int	getGrade() const;
 };
-
-std::ostream&	operator<<(std::ostream& out, const Bureaucrat& Bureaucrat);
-
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& Bureaucrat)
-{
-	return (out << Bureaucrat.getName() << ", Bureaucrat grade " << Bureaucrat.getGrade());
-}
-
-Bureaucrat::Bureaucrat()
-{
-}
-
-Bureaucrat::Bureaucrat(std::string name)
-{
-}
-
-Bureaucrat::Bureaucrat(unsigned int grade)
-{
-}
-
-Bureaucrat::Bureaucrat(std::string name, unsigned int grade)
-{
-}
-
-Bureaucrat::~Bureaucrat()
-{
-}
-
 
 #endif
