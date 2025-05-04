@@ -6,6 +6,8 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include "Form.hpp"
+
 class Bureaucrat
 {
 private:
@@ -38,6 +40,8 @@ public:
 	unsigned int	getGrade() const;
 	void	incrementGrade();
 	void	decrementGrade();
+
+	void	signForm(Form& form);
 };
 
 #endif

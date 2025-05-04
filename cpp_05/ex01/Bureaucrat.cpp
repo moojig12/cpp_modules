@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(unsigned int grade) : _grade(grade) {}
 Bureaucrat::GradeTooLowException::GradeTooLowException(unsigned int grade) : _grade(grade) {}
@@ -64,6 +65,7 @@ unsigned int	Bureaucrat::getGrade() const {
 	return (_grade);
 }
 
+
 void	Bureaucrat::incrementGrade() {
 	_grade--;
 	if (_grade < 1)
@@ -74,4 +76,8 @@ void	Bureaucrat::decrementGrade() {
 	_grade++;
 	if (_grade > 150)
 		throw Bureaucrat::GradeTooLowException(_grade);
+}
+
+void	Bureaucrat::signForm(Form& form) {
+	form.beSigned(*this);
 }
