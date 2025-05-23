@@ -49,7 +49,6 @@ Form::~Form()
 	std::cout << "Form destructor called" << std::endl;
 }
 
-std::ostream&	operator<<(std::ostream& out, const Form& Form);
 std::ostream&	operator<<(std::ostream& out, const Form& Form) {
 	return (out << Form.getName() << ", Form sign grade " << Form.getSignGrade() << \
 	 ", Form execute grade " << Form.getExecuteGrade() << ", Form sign status " << Form.getSign() << std::endl);
