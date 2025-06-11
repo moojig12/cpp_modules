@@ -18,12 +18,12 @@ typedef enum e_scalartype {
 }	t_scalartype;
 
 class ScalarConverter {
-	public:
+	private:
 		ScalarConverter();
 		~ScalarConverter();
 		ScalarConverter(const ScalarConverter &other);
 		ScalarConverter &operator=(const ScalarConverter &other);
-
+	public:
 		static void convert(const std::string &literal);
 };
 
