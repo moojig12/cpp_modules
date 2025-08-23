@@ -8,7 +8,7 @@
 #include <stdint.h>
 
 struct Base {
-    virtual ~Base();
+	virtual ~Base();
 };
 
 struct A : public Base {};
