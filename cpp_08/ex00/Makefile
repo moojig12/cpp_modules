@@ -1,11 +1,11 @@
 NAME = easy
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-RM = rm -f
-
 SRC = main.cpp
 
-OBJ = $(SRC=.cpp=.o)
+OBJ = $(SRC:.cpp=.o)
+
+RM = rm -f
 
 all: $(NAME)
 

@@ -13,5 +13,10 @@ int	main(void) {
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
+	try {
+		easyfind(vec, 42);
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 	return (0);
 }

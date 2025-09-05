@@ -6,10 +6,11 @@
 #include <iostream>
 #include <algorithm>
 #include <stdexcept>
+#include <iterator>
 
 template <typename T>
 int	easyfind(T &container, int value) {
-	for (T::iterator it = container.begin(); it != container.end(); ++it) {
+	for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
 		if (*it == value) {
 			std::cout << "Value " << value << " found." << std::endl;
 			return (*it);
