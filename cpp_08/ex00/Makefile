@@ -1,11 +1,11 @@
-NAME = typp
+NAME = easy
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-SRC	=	AllClasses.cpp main.cpp
+RM = rm -f
 
-OBJ	= $(SRC:.cpp=.o)
+SRC = main.cpp
 
-RM	= rm -f
+OBJ = $(SRC=.cpp=.o)
 
 all: $(NAME)
 
@@ -18,7 +18,7 @@ $(NAME): $(OBJ)
 clean:
 	$(RM) $(OBJ)
 
-fclean:	clean
+fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
