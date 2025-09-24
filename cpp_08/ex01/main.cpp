@@ -13,6 +13,7 @@ int main()
 	std::cout << sp.longestSpan() << std::endl;
 
 	try {
+		std::cout << "----- Trying big numbas -----" << std::endl;
 		Span spoon(10000);
 
 		for (int i = 0; i < 10000; i++) {
@@ -20,6 +21,7 @@ int main()
 		}
 		std::cout << spoon.longestSpan() << std::endl;
 		std::cout << spoon.shortestSpan() << std::endl;
+		std::cout << "Now overfilling..." << std::endl;
 		spoon.addNumber(5);
 	}
 	catch (const std::exception &e) 
@@ -27,6 +29,7 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 	try {
+		std::cout << "----- Trying range add -----" << std::endl;
 		Span spoon(10);
 		std::vector<int> cont;
 
@@ -36,6 +39,7 @@ int main()
 		spoon.addRange(cont.begin(), cont.end());
 		std::cout << spoon.longestSpan() << std::endl;
 		std::cout << spoon.shortestSpan() << std::endl;
+		std::cout << "Now overfilling..." << std::endl;
 		spoon.addNumber(5);
 	}
 	catch (const std::exception &e) 

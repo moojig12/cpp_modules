@@ -65,6 +65,7 @@ void	Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator
 		throw Span::SpanFullException();
 		return ;
 	}
+	_data.insert(_data.end(), start, end);
 }
 
 const char *Span::NoSpanException::what() const throw() {
