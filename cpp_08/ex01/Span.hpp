@@ -21,6 +21,16 @@ public:
 	void	addNumber(int num);
 	int	shortestSpan();
 	int	longestSpan();
+	void	addRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
+
+	class NoSpanException : public std::exception {
+	public:
+		virtual const char *what() const throw(); 
+	};
+	class SpanFullException : public std::exception {
+	public:
+		virtual const char *what() const throw();
+	};
 };
 
 #endif
